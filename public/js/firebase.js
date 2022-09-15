@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
         'remoteConfig',
         'performance',
       ].filter(feature => typeof app[feature] === 'function');
+
+      firebase.analytics();
+      firebase.analytics().logEvent('tutorial_completed');
+
       console.log(`Firebase SDK loaded with ${features.join(', ')}`);
     } catch (e) {
       console.error(e);
